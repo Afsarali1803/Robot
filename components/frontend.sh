@@ -2,6 +2,7 @@
 
 USERID=$(id -u)
 COMPONENT=frontend
+echo &COMPONENT
 LOGFILE=/tmp/&COMPONENT.log
 
 if [ $USERID -ne 0 ] ; then
