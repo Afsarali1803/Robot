@@ -26,12 +26,13 @@ echo -n " Downloading the component:"
 curl -s -L -o /tmp/mongodb.zip "https://github.com/stans-robot-project/mongodb/archive/main.zip"
 stat $?
 
-
+echo -n "Injecting the schemes"
 cd /tmp
-unzip mongodb.zip 
+unzip -o mongodb.zip 
 cd mongodb-main
 mongo < catalogue.js
 mongo < users.js
+stat $?
 
 
 
