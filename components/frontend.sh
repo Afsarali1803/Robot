@@ -8,15 +8,20 @@ if [ $USERID -ne 0 ] ; then
 fi
 echo " Installing the nginx:"
 yum install nginx -y  &>> /tmp/frontend.log
-echo " Installed successfully"
+if [ $? -eq 0 ] then
+    echo -e " Installed successfully" 
+fi
+
 echo " Downloading the component"
 curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/frontend/archive/main.zip"
-
-
 rm -rf /usr/share/nginx/html/*  &>> /tmp/frontend.log
 cd /usr/share/nginx/html
 unzip /tmp/frontend.zip &>> /tmp/frontend.log
-echo "downloading successful"
+
+if [ $? -eq 0 ] then
+    echo -e "downloading successful"
+fi
+
 mv frontend-main/* .
 mv static/* .
 rm -rf frontend-main README.md &>> /tmp/frontend.log
