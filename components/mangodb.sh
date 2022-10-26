@@ -15,6 +15,10 @@ echo -n " Installing the nginx:"
 yum install mongodb-org -y  &>> $LOGFILE
 stat $?
 
+echo -n "updaing the mangodb config:"
+sed -i -e 's/127.0.0.1/0.0.0.0/' mangod.conf
+
+echo -n "starting mangodb"
 systemctl enable nginx &>> $LOGFILE
 systemctl start nginx  &>> $LOGFILE
 
