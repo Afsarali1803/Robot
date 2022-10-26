@@ -16,6 +16,7 @@ if [ $1 -eq 0 ]; then
 else 
     echo -e "Failure"
 fi
+}
 
 echo -n " Installing the nginx:"
 yum install nginx -y  &>> $LOGFILE
