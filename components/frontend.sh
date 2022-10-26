@@ -38,4 +38,3 @@ mv localhost.conf /etc/nginx/default.d/roboshop.conf
 
 systemctl enable nginx &>> $LOGFILE
 systemctl start nginx  &>> $LOGFILE
-
