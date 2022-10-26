@@ -8,7 +8,7 @@ if [ $USERID -ne 0 ] ; then
 fi
 echo " Installing the nginx:"
 yum install nginx -y  &>> /tmp/frontend.log
-if [ $? -eq 0 ] then
+if [ $? -eq 0 ]; then
     echo -e " Installed successfully" 
 fi
 
@@ -18,7 +18,7 @@ rm -rf /usr/share/nginx/html/*  &>> /tmp/frontend.log
 cd /usr/share/nginx/html
 unzip /tmp/frontend.zip &>> /tmp/frontend.log
 
-if [ $? -eq 0 ] then
+if [ $? -eq 0 ]; then
     echo -e "downloading successful"
 fi
 
