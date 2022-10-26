@@ -1,3 +1,5 @@
 #!/bin/bash
 
-echo " This is mangodb component"
+SERID=$(id -u)
+COMPONENT=mangodb
+LOGFILE=/tmp/$COMPONENT.log
