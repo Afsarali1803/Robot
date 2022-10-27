@@ -15,13 +15,15 @@ echo -n " Installing the nginx:"
 yum install mongodb-org -y  &>> $LOGFILE
 stat $?
 
-echo -n "updaing the mangodb config:"
-sed -i -e's/127.0.0.1/0.0.0.0/' /etc/mangod.conf
-stat $?
 
 echo -n "starting mangodb"
 systemctl enable nginx &>> $LOGFILE
 systemctl start nginx  &>> $LOGFILE
+
+
+echo -n "updaing the mangodb config:"
+sed -i -e's/127.0.0.1/0.0.0.0/'/etc/mangod.conf
+stat $?
 
 echo -n " Downloading the component:"
 curl -s -L -o /tmp/mongodb.zip "https://github.com/stans-robot-project/mongodb/archive/main.zip"
