@@ -31,10 +31,10 @@ stat $?
 
 echo -n "Injecting the schemes:"
 cd /tmp
-unzip -o mongodb.zip 
+unzip -o mongodb.zip &>>LOGFILE
 cd mongodb-main
-mongo < catalogue.js
-mongo < users.js
+mongo < catalogue.js &>>LOGFILE
+mongo < users.js &>>LOGFILE
 stat $?
 
 
