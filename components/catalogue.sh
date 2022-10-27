@@ -1,8 +1,9 @@
 #!/bin/bash
 
+USERID=$(id -u)
 COMPONENT=catalogue
 source components/common.sh 
-#LOGFILE=/tmp/$COMPONENT.log
+LOGFILE=/tmp/$COMPONENT.log
 APPUSER=roboshop
 
 echo -n "Configuring Node:"
@@ -14,7 +15,7 @@ yum install nodejs -y &>> LOGFILE
 stat $?
 
 echo -n "Creating user"
-USERADD $APPUSER
+useradd $APPUSER
 stat $?
 
 echo -n "Download the $COMPONENT:"
