@@ -29,7 +29,7 @@ echo -n " Moving the component to catalogue:"
 cd /home/roboshop
 stat $?
 echo -n "remove catalog"
-rm -rf catalogue
+rm -rf catalogue catalog-main
 stat $?
 echo -n " UNZIP the catalog:"
 unzip /tmp/catalogue.zip &>> LOGFILE
