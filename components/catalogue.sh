@@ -17,8 +17,10 @@ stat $?
 useradd $APPUSER
 
 if [ $? -ne 0 ]; then
-    sed '$d' /etc/passwd
+    sed '$d' /etc/passwd &>> LOGFILE
+    echo -n "creating the user:"
     useradd $APPUSER
+    stat $?
 else
     echo -n "User already created:"
     stat $?
