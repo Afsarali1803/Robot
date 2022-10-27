@@ -17,8 +17,8 @@ stat $?
 
 
 echo -n "starting mangodb"
-systemctl enable nginx &>> $LOGFILE
-systemctl start nginx  &>> $LOGFILE
+systemctl enable mangod &>> $LOGFILE
+systemctl start mangod  &>> $LOGFILE
 stat $?
 
 echo -n "updaing the mangodb config:"
