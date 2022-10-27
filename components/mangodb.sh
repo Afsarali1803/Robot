@@ -12,13 +12,13 @@ curl -s -o /etc/yum.repos.d/mongodb.repo https://raw.githubusercontent.com/stans
 stat $?
 
 echo -n " Installing the nginx:"
-yum install mongodb-org -y  &>> $LOGFILE
+yum install -y mongodb-org   &>> $LOGFILE
 stat $?
 
 
-echo -n "starting mangodb"
-systemctl enable mangod &>> $LOGFILE
-systemctl start mangod  &>> $LOGFILE
+echo -n "starting mangodb:"
+systemctl enable mongod &>> $LOGFILE
+systemctl start mongod  &>> $LOGFILE
 stat $?
 
 echo -n "updaing the mangodb config:"
