@@ -16,7 +16,7 @@ yum install mongodb-org -y  &>> $LOGFILE
 stat $?
 
 echo -n "updaing the mangodb config:"
-sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/mangod.conf
+sed -i -e's/127.0.0.1/0.0.0.0/' /etc/mangod.conf
 stat $?
 
 echo -n "starting mangodb"
