@@ -14,7 +14,7 @@ echo -n "Install the node js Application"
 yum install nodejs -y &>> LOGFILE
 stat $?
 
-echo -n "Creating user"
+echo -n "Creating user:"
 useradd $APPUSER
 stat $?
 
@@ -22,6 +22,20 @@ echo -n "Download the $COMPONENT:"
 curl -s -L -o /tmp/catalogue.zip "https://github.com/stans-robot-project/catalogue/archive/main.zip"
 stat $?
 
+echo -n " Moving the component to catalogue:"
+cd /home/roboshop
+stat $?
+
+echo -n " UNZIP the catalog:"
+unzip /tmp/catalogue.zip &>> LOGFILE
+stat $?
+
+mv catalogue-main catalogue
+cd /home/roboshop/catalogue
+
+echo -n " npm install:"
+npm install &>> LOGFILE
+stat $?
 
 
 
