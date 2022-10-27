@@ -14,18 +14,12 @@ echo -n "Install the node js Application"
 yum install nodejs -y &>> LOGFILE
 stat $?
 
-useradd $APPUSER
-
+id $APPUSER &>> LOGFILE
 if [ $? -ne 0 ]; then
-    sed '$d' /etc/passwd &>> LOGFILE
-    echo -n "creating the user:"
-    useradd $APPUSER
-    stat $?
-else
-    echo -n "User already created:"
+    echo -n "Create app user"
+    useradd roboshop
     stat $?
 fi
-
 
 echo -n "Download the $COMPONENT:"
 curl -s -L -o /tmp/catalogue.zip "https://github.com/stans-robot-project/catalogue/archive/main.zip"
