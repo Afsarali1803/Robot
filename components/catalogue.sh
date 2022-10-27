@@ -16,10 +16,11 @@ stat $?
 
 useradd $APPUSER
 
-if [ $? -eq 0 ]; then
-    echo -n "User already created:"
-else
+if [ $? -ne 0 ]; then
+    sed '$d' /etc/passwd
     useradd $APPUSER
+else
+    echo -n "User already created:"
     stat $?
 fi
 
