@@ -64,8 +64,9 @@ echo $?
 echo -n "daemon-status:"
 systemctl status catalogue -l &>> LOGFILE
 echo $?
-
-
+echo -n "restart nginx:"
+systemctl restart nginx
+stat $?
 
 
 
