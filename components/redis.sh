@@ -8,7 +8,7 @@ source components/common.sh
 
 
 echo -n " Downloading the component:"
-curl -L https://raw.githubusercontent.com/stans-robot-project/redis/main/redis.repo -o /etc/yum.repos.d/redis.repo
+curl -L https://raw.githubusercontent.com/stans-robot-project/redis/main/redis.repo -o /etc/yum.repos.d/redis.repo &>> LOGFILE
 stat $?
 
 
