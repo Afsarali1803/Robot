@@ -9,3 +9,6 @@ catalogue:
 
 mangodb:
 	bash components/mangodb.sh
+
+redis:
+	bash components/redis.sh
