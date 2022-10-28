@@ -18,7 +18,7 @@ stat $?
 
 echo -n "whitelisting redis:"
 sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/redis.conf
-stat $
+stat $?
 
 echo -n "Starting service"
 systemctl daemon-reload
