@@ -55,13 +55,13 @@ mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.servic
 echo -n "daemon-reload:"
 systemctl daemon-reload
 echo $?
-echo -n "daemon-reload:"
+echo -n "daemon-start:"
 systemctl start catalogue
 echo $?
-echo -n "daemon-reload:"
+echo -n "daemon-enable:"
 systemctl enable catalogue
 echo $?
-echo -n "daemon-reload:"
+echo -n "daemon-status:"
 systemctl status catalogue -l &>> LOGFILE
 echo $?
 
