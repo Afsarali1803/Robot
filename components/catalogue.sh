@@ -62,7 +62,7 @@ echo -n "daemon-reload:"
 systemctl enable catalogue
 echo $?
 echo -n "daemon-reload:"
-systemctl status catalogue -l
+systemctl status catalogue -l &>> LOGFILE
 echo $?
 
 
