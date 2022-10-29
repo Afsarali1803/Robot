@@ -55,3 +55,19 @@ stat $?
 echo -n "Adding redisip in system.service file:"
 sed -i -e 's/REDIS_ENDPOINT/172.31.94.35/' /home/roboshop/$COMPONENT/systemd.service 
 stat $?
+
+mv /home/roboshop/user/systemd.service /etc/systemd/system/user.service
+
+echo -n "daemon-reload:"
+systemctl daemon-reload
+echo $?
+echo -n "daemon-start:"
+systemctl start user 
+echo $?
+echo -n "daemon-enable:"
+systemctl enable user
+echo $?
+echo -n "daemon-status:"
+systemctl status user -l &>> LOGFILE
+echo $?
+

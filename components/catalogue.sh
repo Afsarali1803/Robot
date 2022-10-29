@@ -47,7 +47,7 @@ chown -R $APPUSER:$APPUSER /home/roboshop/$COMPONENT
 stat $?
 
 echo -n "Adding mongoip in system.service file:"
-sed -e 's/MONGO_DNSNAME/172.31.81.39/' systemd.service &>> LOGFILE
+sed -i -e 's/MONGO_DNSNAME/172.31.81.39/' systemd.service &>> LOGFILE
 stat $?
 
 mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service
