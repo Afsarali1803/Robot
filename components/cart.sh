@@ -38,7 +38,7 @@ unzip /tmp/cart.zip &>> LOGFILE
 stat $?
 
 mv cart-main cart
-cd /home/roboshop/Create
+cd /home/roboshop/cart
 
 echo -n " npm install:"
 npm install &>> LOGFILE
