@@ -29,12 +29,12 @@ echo -n " Moving the component to catalogue:"
 cd /home/roboshop
 stat $?
 
-echo -n "remove catalog"
+echo -n "remove catalog:"
 rm -rf user user-main
 stat $?
 
-echo -n "unzip user.zip"
-unzip /tmp/user.zip
+echo -n "unzip user.zip:"
+unzip /tmp/user.zip &>>LOGFILE
 stat $?
 
 mv  user-main user
@@ -44,3 +44,14 @@ echo -n " npm install:"
 npm install &>> LOGFILE
 stat $?
 
+echo -n "Changing permission:"
+chown -R $APPUSER:$APPUSER /home/roboshop/$COMPONENT
+stat $?
+
+echo -n "Adding mongoip in system.service file:"
+sed -e 's/MONGO_ENDPOINT/172.31.81.39/' systemd.service 
+stat $?
+
+echo -n "Adding redisip in system.service file:"
+sed -e 's/REDIS_ENDPOINT/172.31.94.35/' systemd.service 
+stat $?
