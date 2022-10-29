@@ -1,3 +1,8 @@
 #!/bin/bash
 
-echo " I am cart component"
+echo " This is cart component"
+
+
+
+
+
