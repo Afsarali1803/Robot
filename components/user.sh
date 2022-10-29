@@ -49,9 +49,9 @@ chown -R $APPUSER:$APPUSER /home/roboshop/$COMPONENT
 stat $?
 
 echo -n "Adding mongoip in system.service file:"
-sed -e 's/MONGO_ENDPOINT/172.31.81.39/' systemd.service 
+sed -i -e 's/MONGO_ENDPOINT/172.31.81.39/' /home/roboshop/$COMPONENTsystemd.service 
 stat $?
 
 echo -n "Adding redisip in system.service file:"
-sed -e 's/REDIS_ENDPOINT/172.31.94.35/' systemd.service 
+sed -i -e 's/REDIS_ENDPOINT/172.31.94.35/' /home/roboshop/$COMPONENTsystemd.service 
 stat $?
