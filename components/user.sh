@@ -29,11 +29,15 @@ echo -n " Moving the component to catalogue:"
 cd /home/roboshop
 stat $?
 
+echo -n "remove catalog"
+rm -rf user user-main
+stat $?
+
 echo -n "unzip user.zip"
 unzip /tmp/user.zip
 stat $?
 
-mv mv user-main user
+mv  user-main user
 cd /home/roboshop/user
 
 echo -n " npm install:"
