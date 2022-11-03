@@ -1,7 +1,7 @@
 #!/bin/bash
 
 USERID=$(id -u)
-COMPONENT=sql
+COMPONENT=mysql
 source components/common.sh 
 LOGFILE=/tmp/$COMPONENT.log
 APPUSER=roboshop
