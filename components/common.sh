@@ -91,7 +91,7 @@ CREATE_USER() {
     fi
 } 
 
-OWNLOAD_AND_EXTRACT() {
+DOWNLOAD_AND_EXTRACT() {
     echo -n "Downloading the $COMPONENT:"
     curl -s -L -o /tmp/$COMPONENT.zip "https://github.com/stans-robot-project/$COMPONENT/archive/main.zip"
     stat $? 
