@@ -16,3 +16,21 @@ else
     echo -e "Failure"
 fi
 }
+
+MAVEN() {
+    echo -n "Installing Maven:"
+    yum install maven -y &>> $LOGFILE
+    stat $? 
+
+    # Calling create_user function
+    CREATE_USER
+
+    # Downloading the code
+    DOWNLOAD_AND_EXTRACT 
+
+    # Performs mvn install 
+    MVN_INSTALL
+
+    # Configures Services
+    CONFIGURE_SERVICE
+}
