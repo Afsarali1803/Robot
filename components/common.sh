@@ -1,6 +1,7 @@
 #!/bin/bash
 
 LOGFILE=/tmp/$COMPONENT.log
+USERID=$(id -u) 
 
 if [ $USERID -ne 0 ] ; then
     echo -e "Run as a root user"
